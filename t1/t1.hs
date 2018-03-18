@@ -39,7 +39,7 @@ trocaLetras x = map trocaLetra x
 
 --(5) Com função anônima
 trocaLetraAnon :: String -> String
-trocaLetraAnon x = map (\y -> if t == ' ' then ' ' else '-') x
+trocaLetraAnon x = map (\y -> if y == ' ' then ' ' else '-') x
 
 --(6)
 firstName :: String -> String
@@ -65,10 +65,19 @@ valorVogal x
   | x == 'i' = '2'
   | x == 'o' = '1'
   | x == 'u' = '0'
+  | x == 'A' = '4'
+  | x == 'E' = '3'
+  | x == 'I' = '2'
+  | x == 'O' = '1'
+  | x == 'U' = '0'
+  | otherwise = x
 
 encodeName :: String -> String
-encodeName x = map (\y -> if (isVowel y) then (valorVogal y) else y) x
+encodeName x = map valorVogal x
 
 --(11)
 
+
 --(12)
+completaStrings :: [String] -> [String]
+completaStrings x = map(\y -> if(length y)>10 then (take 10 y) else (take 10 (y ++"..........")))x
