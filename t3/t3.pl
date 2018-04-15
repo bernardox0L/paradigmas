@@ -25,3 +25,16 @@ potencias2(X,N,L):-
     H is 2^X, 
     XI is X+1, 
     potencias2(XI,N,T).
+
+% *7. Defina um predicado positivos(L1,L2), de forma que L2 seja uma lista só com os elementos positivos de L1, conforme o exemplo abaixo:
+positivos([],_).
+positivos(L1,L2):- 
+    L1=[H1|T1],
+    L2=[H2,T2], 
+    H1>0, 
+    H2 is H1, 
+    positivos(T1,T2).
+
+positivos(L1,L2) :-
+    L1 = [_|T1],
+    positivos(T1, L2).
