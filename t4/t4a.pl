@@ -79,3 +79,5 @@ cdIndependente(CD):-
    %   (C) X, Y, W, S, T, Z, S
    %   (D) Y, T, W, S, X, Z, V
    %   (E) Z, T, X, W, V, Y, S
+   % 
+   % ALTERNATIVA CORRETA: D
